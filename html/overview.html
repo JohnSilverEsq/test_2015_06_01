@@ -1,0 +1,9 @@
+{% extends base.html %}
+{% block page_title %}Blog{% end %}
+{% block page_description %}Blog{% end %}
+{%block scripts_placeholder%}<script src="/js/overview.js"></script>{%end%}
+{% block content_placeholder %}
+<div class="container">
+{% module Template('list.articles')%}
+</div>
+{% end %}

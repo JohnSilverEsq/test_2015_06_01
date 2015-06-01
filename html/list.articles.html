@@ -1,0 +1,8 @@
+<div class="row col-md-10" id="articles">
+    <h1 data-bind="visible: $data.length==0">
+        <span data-bind="text: 'There are no records yet.'">Loading...</span>
+    </h1>
+    <div style="display: none" class="row" data-bind="visible: true, foreach: $data">
+        {% module Template('article', active_page=active_page) %}
+    </div>
+</div>

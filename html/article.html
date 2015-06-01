@@ -1,0 +1,20 @@
+<div class="row" style="padding-bottom: 20px">
+    <table class="col-md-10">
+        <tbody>
+        <tr>
+            <td class="col-md-2 text-muted">
+                <p data-bind="text: 'by '+author"></p>
+                <p data-bind="text: posted"></p>
+            </td>
+            <td class="col-md-6"><h2 data-bind="text: title"></h2></td>
+        </tr>
+        <tr>
+            <td>{%if active_page=='articles'%}
+                <button type="button" data-bind="click: function(e,d){app.delete_article(id);}"><i class="glyphicon glyphicon-trash"></i></button>&nbsp;
+                <button type="button" data-bind="click: function(e,d){app.edit_article(id);}"><i class="glyphicon glyphicon-pencil"></i></button>
+                {%end%}</td>
+            <td><p class="lead" data-bind="text: content"></p></td>
+        </tr>
+        </tbody>
+    </table>
+</div>

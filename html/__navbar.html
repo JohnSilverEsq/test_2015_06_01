@@ -1,0 +1,21 @@
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+                    aria-expanded="false" aria-controls="navbar">
+            </button>
+            <span class="navbar-brand">{%if user %}{{user.user_name}}{%else%}Blog{%end%}</span>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                {%if user%}
+                    {%for href,title in (('blogs','Blogs'),('articles','My articles'),('logoff','Logoff'))%}
+                        <li {%if active==href%}class="active"{%end%}><a href="{{href}}">{{title}}</a></li>
+                    {%end%}
+                {%else%}
+                    <li ><a href="#" onclick="app.show_login_dialog()">Login</a></li>
+                {%end%}
+            </ul>
+        </div>
+    </div>
+</nav>
